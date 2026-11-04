@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KOMARA Ahmed El-Habib · Réseau et sécurité informatique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p class="etiquette">KOMARA Ahmed El-Habib</p>
+  <h1>Je conçois, segmente et défends des réseaux.</h1>
+  <p>Étudiant en Licence 1 réseau et sécurité informatique à l'Université Virtuelle de Côte d'Ivoire (UVCI). Objectif : poursuivre mes études en France.</p>
+  <a class="bouton" href="#contact">Me contacter</a>
+
+  <section>
+    <h2>// outils du projet</h2>
+    <div class="competences">
+      <span class="competence">pfSense</span>
+      <span class="competence">FreeRADIUS</span>
+      <span class="competence">Django (Python)</span>
+      <span class="competence">MariaDB</span>
+      <span class="competence">VMware</span>
+      <span class="competence">Ubuntu Server</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>// projet principal</h2>
+    <div class="projet">
+      <h3>Portail captif avec facturation</h3>
+      <p class="statut">Projet de stage · conception en 9 phases · construction en cours</p>
+      <p>Vendre un accès Internet au temps passé : sans paiement validé, pas d'Internet, en Wi-Fi comme sur câble.</p>
+      <ul>
+        <li>pfSense intercepte le trafic et redirige l'utilisateur vers l'application.</li>
+        <li>Django gère les comptes, les forfaits, le paiement simulé et les factures PDF.</li>
+        <li>FreeRADIUS ouvre l'accès après validation et le coupe à l'heure exacte.</li>
+      </ul>
+      <p>Sécurité : quatre verrous successifs (interception, commande, validation administrateur, accès RADIUS). Validation par 8 scénarios de test, dont une demande validée deux fois qui ne crée qu'un seul accès.</p>
+      <span class="tag">pfSense</span><span class="tag">RADIUS</span><span class="tag">Django</span><span class="tag">VMware</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>// contact</h2>
+    <p>Email : elhabibko.pro [at] gmail.com</p>
+  </section>
+</body>
+</html>

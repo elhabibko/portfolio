@@ -1,0 +1,106 @@
+body {
+  background: #0e1116;
+  color: #e6e9ef;
+  font-family: Arial, sans-serif;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  line-height: 1.6;
+}
+
+.etiquette {
+  color: #3ddc97;
+  font-family: monospace;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 8px 0;
+}
+
+p {
+  color: #8b94a3;
+}
+
+.bouton {
+  display: inline-block;
+  background: #3ddc97;
+  color: #06210f;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 16px;
+}section {
+  margin-top: 48px;
+}
+
+h2 {
+  font-size: 14px;
+  color: #3ddc97;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #262d38;
+  padding-bottom: 8px;
+}
+
+.competences {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.competence {
+  background: #161b22;
+  border: 1px solid #262d38;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.projet {
+  background: #161b22;
+  border: 1px solid #262d38;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.projet h3 {
+  margin: 0 0 6px 0;
+  font-size: 17px;
+}
+
+.projet p {
+  margin: 0;
+}.projet .statut {
+  color: #3ddc97;
+  font-family: monospace;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.projet ul {
+  margin: 10px 0;
+  padding-left: 20px;
+  color: #8b94a3;
+}
+
+.projet li {
+  margin-bottom: 4px;
+}
+
+.tag {
+  display: inline-block;
+  background: #12301f;
+  color: #3ddc97;
+  font-family: monospace;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 8px 6px 0 0;
+}
