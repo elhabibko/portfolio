@@ -25,6 +25,10 @@ p {
   color: #8b94a3;
 }
 
+a {
+  color: #3ddc97;
+}
+
 .bouton {
   display: inline-block;
   background: #3ddc97;
@@ -34,7 +38,9 @@ p {
   text-decoration: none;
   font-weight: bold;
   margin-top: 16px;
-}section {
+}
+
+section {
   margin-top: 48px;
 }
 
@@ -76,8 +82,10 @@ h2 {
 }
 
 .projet p {
-  margin: 0;
-}.projet .statut {
+  margin: 0 0 8px 0;
+}
+
+.projet .statut {
   color: #3ddc97;
   font-family: monospace;
   font-size: 12px;
