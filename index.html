@@ -1,62 +1,106 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KOMARA Ahmed El-Habib · Réseau et sécurité informatique</title>
-  <meta name="description" content="Portfolio de KOMARA Ahmed El-Habib, étudiant en Licence 1 réseau et sécurité informatique à l'UVCI : portail captif avec facturation, pfSense, FreeRADIUS, Django.">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KOMARA Ahmed El-Habib · Réseau et sécurité informatique</title>
+<meta name="description" content="Portfolio de KOMARA Ahmed El-Habib, étudiant en Licence 1 réseau et sécurité informatique à l'UVCI : portail captif avec facturation, pfSense, FreeRADIUS, Django.">
+<meta name="theme-color" content="#3a6e76">
+<meta property="og:title" content="KOMARA Ahmed El-Habib · Réseau et sécurité informatique">
+<meta property="og:description" content="Étudiant en Licence 1 réseau et sécurité informatique. Projets documentés, de la conception à la démonstration.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%233a6e76'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script src="main.js" defer></script>
 </head>
 <body>
-    <main>
-  <p class="etiquette">KOMARA Ahmed El-Habib</p>
-  <h1>Je conçois, segmente et défends des réseaux.</h1>
-  <p>Étudiant en Licence 1 réseau et sécurité informatique à l'Université Virtuelle de Côte d'Ivoire (UVCI). Objectif : poursuivre mes études en France.</p>
-  <a class="bouton" href="#contact">Me contacter</a>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="top"><div class="w">
+<a class="brand" href="#accueil">KOMARA Ahmed El-Habib</a>
+<nav aria-label="Navigation principale"><ul>
+<li><a href="#projets">Projets</a></li><li><a href="#competences">Compétences</a></li><li><a href="#parcours">Parcours</a></li><li><a href="#preuves">Preuves</a></li><li><a href="#contact">Contact</a></li>
+</ul></nav></div></header>
 
-  <section>
-    <h2>// outils du projet</h2>
-    <div class="competences">
-      <span class="competence">pfSense</span>
-      <span class="competence">FreeRADIUS</span>
-      <span class="competence">Django (Python)</span>
-      <span class="competence">MariaDB</span>
-      <span class="competence">VMware</span>
-      <span class="competence">Ubuntu Server</span>
-    </div>
-  </section>
+<main id="main">
+<section class="hero" id="accueil">
+<svg class="st" viewBox="0 0 700 700" aria-hidden="true"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9bbab5" stop-opacity="0"/><stop offset=".6" stop-color="#9bbab5" stop-opacity=".75"/><stop offset="1" stop-color="#9bbab5" stop-opacity=".25"/></linearGradient></defs><g fill="url(#g1)"><rect x="40" y="290" width="620" height="120"/><rect x="290" y="40" width="120" height="620"/><rect transform="rotate(45 350 350)" x="40" y="290" width="620" height="120"/><rect transform="rotate(-45 350 350)" x="40" y="290" width="620" height="120"/></g></svg>
+<div class="w">
+<p class="wl">Bienvenue sur mon portfolio</p>
+<h1>Réseau<br>&amp; Sécurité</h1>
+<p class="by">Présenté par <b>KOMARA Ahmed El-Habib</b></p>
+<div class="act"><a class="pill" href="#projets">Voir mes projets →</a><a class="pill o" href="#contact">Me contacter</a></div>
+<div class="ib">
+<div><small>Formation</small><b>Licence 1, UVCI</b></div>
+<div><small>Domaine</small><b>Réseau et sécurité informatique</b></div>
+<div><small>Objectif</small><b>Poursuivre mes études en France</b></div>
+</div></div>
+</section>
 
-  <section>
-    <h2>// projet principal</h2>
-    <div class="projet">
-      <h3>Portail captif avec facturation</h3>
-      <p class="statut">Projet de stage · conception documentée en 9 phases</p>
-      <p>Vendre un accès Internet au temps passé : sans paiement validé, pas d'Internet, en Wi-Fi comme sur câble.</p>
-      <ul>
-        <li>pfSense intercepte le trafic et redirige l'utilisateur vers l'application.</li>
-        <li>Django gère les comptes, les forfaits, le paiement simulé et les factures PDF.</li>
-        <li>FreeRADIUS ouvre l'accès après validation et le coupe à l'heure exacte.</li>
-      </ul>
-      <p>Sécurité : quatre verrous successifs (interception, commande, validation administrateur, accès RADIUS). Validation par 8 scénarios de test, dont une demande validée deux fois qui ne crée qu'un seul accès.</p>
-      <span class="tag">pfSense</span><span class="tag">RADIUS</span><span class="tag">Django</span><span class="tag">VMware</span>
-    </div>
-  </section>
+<section class="sec dark" id="approche">
+<div class="w">
+<h2 class="t rv">Apprendre<br><b>en construisant</b></h2>
+<div class="cards c3">
+<article class="card sg rv"><h3>Concevoir</h3><p>Je pars d'un besoin réel, je dessine l'architecture, puis je la monte sur des machines virtuelles.</p></article>
+<article class="card wh rv"><h3>Sécuriser</h3><p>Chaque accès passe par plusieurs verrous successifs, et des scénarios de test sont définis avant la mise en service.</p></article>
+<article class="card sg rv"><h3>Documenter</h3><p>Un dossier clair par projet : contexte, choix techniques, tests et résultats.</p></article>
+</div></div>
+</section>
 
-  <section>
-    <h2>// ce site, audité</h2>
-    <div class="competences">
-      <span class="competence">Mozilla Observatory : A+ (120/100)</span>
-      <span class="competence">12 tests sur 12 réussis</span>
-         <span class="competence">PageSpeed mobile : 100 · 100 · 100 · 100</span>
-      <span class="competence">HTTPS · HSTS · CSP sans unsafe-inline</span>
-    </div>
-    <p>Mesuré le 4 novembre 2026. Aucun cookie, aucun script tiers, aucun traceur.</p>
-    </section>
+<section class="sec" id="projets">
+<div class="w kf">
+<div class="rv"><h2 class="l">Projets<br><b>phares</b></h2>
+<div class="card tl"><p>Chaque projet suit la même fiche : contexte, rôle, outils, résultat et preuves.</p></div></div>
+<div class="cards c2">
+<article class="card dk rv"><span class="tag">Projet de stage</span><h3>Portail captif avec facturation</h3><p>Vendre un accès Internet au temps passé : sans paiement validé, pas de connexion.</p><div class="tg"><span>pfSense</span><span>FreeRADIUS</span><span>Django</span></div><p><a href="projet-portail-captif.html">Découvrir le projet →</a></p></article>
+<article class="card sl rv"><h3>Projet 2</h3><p>Emplacement réservé.</p></article>
+<article class="card sl rv"><h3>Projet 3</h3><p>Emplacement réservé.</p></article>
+<article class="card sl rv"><h3>Projet 4</h3><p>Emplacement réservé.</p></article>
+</div></div>
+</section>
 
-      <section id="contact">
-    <h2>// contact</h2>
-    <p>Email : elhabibko.pro [at] gmail.com</p>
-  </section>
+<section class="sec" id="competences">
+<div class="w cp">
+<div class="arch rv"><h2 class="l">Compé&shy;tences</h2></div>
+<ul class="rows rv">
+<li><span class="lab">Réseau</span><span class="dot"></span><div><h3>pfSense, RADIUS</h3><p>Interception du trafic, authentification et contrôle d'accès.</p></div></li>
+<li><span class="lab">Systèmes</span><span class="dot"></span><div><h3>Ubuntu Server, VMware</h3><p>Environnement de test en machines virtuelles.</p></div></li>
+<li><span class="lab">Code</span><span class="dot"></span><div><h3>Python, Django, MariaDB</h3><p>Application web : comptes, forfaits, factures.</p></div></li>
+<li><span class="lab">Sécurité</span><span class="dot"></span><div><h3>Défense en profondeur</h3><p>Verrous successifs et scénarios de test.</p></div></li>
+</ul></div>
+</section>
+
+<section class="sec dark" id="parcours">
+<div class="w">
+<h2 class="t rv">Mon <b>parcours</b></h2>
+<div class="rm">
+<article class="card rv"><span class="lb">ÉTAPE 1</span><h3>Licence 1</h3><p>Réseau et sécurité informatique, Université Virtuelle de Côte d'Ivoire. En cours.</p></article>
+<article class="card rv"><span class="lb">ÉTAPE 2</span><h3>Portail captif</h3><p>Projet de stage : dossier de conception en 9 phases.</p></article>
+<article class="card rv"><span class="lb">ÉTAPE 3</span><h3>France</h3><p>Poursuite d'études : mon objectif.</p></article>
+</div></div>
+</section>
+
+<section class="sec" id="preuves">
+<div class="w">
+<h2 class="t rv">Preuves <b>et avis</b></h2>
+<div class="cards c3">
+<article class="card sl rv"><h3>Certifications</h3><p>Emplacement prêt : titre, date et lien de vérification.</p></article>
+<article class="card sg rv"><h3>Code et démos</h3><p>Dépôts GitHub avec README, captures et vidéos.</p><p><a href="https://github.com/elhabibko">github.com/elhabibko</a></p></article>
+<article class="card wh rv"><h3>Avis</h3><p>Le mot d'un encadrant ou d'un enseignant, avec son accord.</p></article>
+</div></div>
+</section>
+
+<section class="sec cta" id="contact">
+<div class="w">
+<h2 class="rv">Construisons<br><b>la suite ensemble</b></h2>
+<a class="pill rv" href="#contact" data-u="elhabibko.pro" data-d="gmail.com">Me contacter</a>
+<div class="cl rv">
+<div><small>E-mail</small><b>elhabibko.pro [at] gmail.com</b></div>
+<div><small>GitHub</small><b><a href="https://github.com/elhabibko">github.com/elhabibko</a></b></div>
+<div><small>CV</small><b>Bientôt disponible (PDF)</b></div>
+</div></div>
+</section>
 </main>
+
+<footer class="ft"><div class="w"><span>© 2026 KOMARA Ahmed El-Habib</span><span>Site statique, sans cookie ni traceur</span></div></footer>
 </body>
 </html>
