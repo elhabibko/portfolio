@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portail captif avec facturation · KOMARA Ahmed El-Habib</title>
+<meta name="description" content="Projet de stage : portail captif avec facturation sur pfSense, FreeRADIUS, MariaDB et Django. Quatre verrous, neuf phases, dix tests de recette.">
+<meta name="theme-color" content="#3a6e76">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%233a6e76'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="top"><div class="w">
+<a class="brand" href="index.html">KOMARA Ahmed El-Habib</a>
+<nav aria-label="Navigation principale"><ul>
+<li><a href="index.html#projets">Projets</a></li><li><a href="index.html#competences">Compétences</a></li><li><a href="index.html#parcours">Parcours</a></li><li><a href="index.html#contact">Contact</a></li>
+</ul></nav></div></header>
+
+<main id="main">
+<section class="ph"><div class="w">
+<a class="crumb" href="index.html#projets">← Retour aux projets</a>
+<h1>Portail captif<br>avec facturation</h1>
+<p class="lead">Projet de stage réalisé en laboratoire VMware. Vendre un accès Internet au temps passé, en Wi-Fi comme sur câble : sans paiement validé, pas d'Internet.</p>
+<div class="stats"><div><b>9</b>phases</div><div><b>10</b>tests de recette</div><div><b>6</b>forfaits</div><div><b>3</b>machines virtuelles</div></div>
+</div></section>
+
+<section class="sec" id="contexte">
+<div class="w">
+<h2 class="t rv">Contexte <b>et objectif</b></h2>
+<div class="cards c2">
+<article class="card sg rv"><h3>Objectif</h3><p>Un achat validé par l'administrateur ouvre Internet pour la durée exacte, la facture PDF se télécharge, et l'accès se coupe seul.</p></article>
+<article class="card wh rv"><h3>Périmètre</h3><p>Paiement simulé, données fictives, montants en FCFA entiers. Laboratoire de trois machines virtuelles, puis réseau filaire réel.</p></article>
+</div></div>
+</section>
+
+<section class="sec dark sq" id="verrous">
+<span class="dc a1" aria-hidden="true"></span><span class="dc a2" aria-hidden="true"></span>
+<div class="w">
+<h2 class="t rv">Quatre verrous<br><b>avant tout accès</b></h2>
+<div class="rm r4">
+<article class="card rv"><span class="lb">VERROU 1</span><h3>Interception</h3><p>Tout trafic http d'un client non authentifié est redirigé vers le portail.</p></article>
+<article class="card rv"><span class="lb">VERROU 2</span><h3>Commande</h3><p>Utilisateur identifié, forfait choisi, montant calculé en FCFA entier.</p></article>
+<article class="card rv"><span class="lb">VERROU 3</span><h3>Validation</h3><p>La demande de paiement simulé est acceptée par l'administrateur.</p></article>
+<article class="card rv"><span class="lb">VERROU 4</span><h3>Accès RADIUS</h3><p>Identifiant technique aléatoire avec expiration, transmis à pfSense.</p></article>
+</div></div>
+</section>
+
+<section class="sec" id="briques">
+<div class="w">
+<h2 class="t rv">Trois briques,<br><b>un rôle chacune</b></h2>
+<div class="cards c3">
+<article class="card sg rv"><h3>pfSense</h3><p>Intercepte. Pare-feu et routeur : il bloque tout utilisateur non authentifié et le redirige vers l'application.</p></article>
+<article class="card tl rv"><h3>Django</h3><p>Vend et facture. Comptes, forfaits, demandes de paiement simulées, validation et factures PDF.</p></article>
+<article class="card wh rv"><h3>FreeRADIUS</h3><p>Ouvre et coupe. Il connaît l'identifiant de chaque achat et sa date d'expiration.</p></article>
+</div></div>
+</section>
+
+<section class="sec" id="phases">
+<div class="w">
+<h2 class="t rv">Neuf phases,<br><b>chacune validée</b></h2>
+<div class="cards c3">
+<article class="card s rv"><span class="n">Phase 0</span><h3>Socle pfSense</h3><p>Critère : ping 8.8.8.8 depuis le client.</p></article>
+<article class="card s rv"><span class="n">Phase 1</span><h3>Portail natif</h3><p>Critère : un code ouvre Internet, puis se coupe.</p></article>
+<article class="card s rv"><span class="n">Phase 2</span><h3>Serveur Ubuntu</h3><p>Critère : ssh et apt update fonctionnent.</p></article>
+<article class="card s rv"><span class="n">Phase 3</span><h3>FreeRADIUS + MariaDB</h3><p>Critère : radtest renvoie Access-Accept.</p></article>
+<article class="card s rv"><span class="n">Phase 4</span><h3>Application Django</h3><p>Critère : achat simulé, accès ouvert, facture PDF.</p></article>
+<article class="card s rv"><span class="n">Phase 5</span><h3>Intégration au portail</h3><p>Critère : parcours complet sur le client.</p></article>
+<article class="card s rv"><span class="n">Phase 6</span><h3>Paiement simulé</h3><p>Critère : validé, accès ouvert ; refusé, rien.</p></article>
+<article class="card s rv"><span class="n">Phase 7</span><h3>Administration</h3><p>Critère : tableau de bord utilisable.</p></article>
+<article class="card s rv"><span class="n">Phase 8</span><h3>Réseau filaire</h3><p>Critère : démonstration en filaire.</p></article>
+</div></div>
+</section>
+
+<section class="sec dark arcs" id="recette">
+<span class="dc a1" aria-hidden="true"></span><span class="dc a2" aria-hidden="true"></span>
+<div class="w">
+<h2 class="t rv">Recette :<br><b>dix scénarios de test</b></h2>
+<div class="cards c2">
+<article class="card sg rv"><h3>T1 · Client non authentifié</h3><p>Redirigé vers l'application, aucun accès à Internet.</p></article>
+<article class="card wh rv"><h3>T5 · Commande validée deux fois</h3><p>Un seul accès et une seule facture.</p></article>
+<article class="card wh rv"><h3>T7 · Forfait de 2 minutes</h3><p>Accès coupé à l'heure exacte.</p></article>
+<article class="card sg rv"><h3>T8 · Second appareil</h3><p>Refusé : un seul appareil par accès.</p></article>
+</div></div>
+</section>
+
+<section class="sec" id="bilan">
+<div class="w">
+<h2 class="t rv">Difficultés <b>et solutions</b></h2>
+<div class="cards c3">
+<article class="card sg rv"><h3>Disque pfSense corrompu</h3><p>Désormais : arrêt par Halt, instantanés à chaque jalon, config.xml exporté.</p></article>
+<article class="card tl rv"><h3>LAN absent</h3><p>Seconde carte réseau oubliée : ajoutée, puis interfaces réassignées.</p></article>
+<article class="card wh rv"><h3>Clavier AZERTY/QWERTY</h3><p>Accès au serveur par SSH depuis Windows.</p></article>
+</div>
+<div class="cards c3 pers">
+<article class="card sl rv"><h3>Paiement</h3><p>Perspective : API Mobile Money avec confirmation automatique.</p></article>
+<article class="card sl rv"><h3>Chiffrement</h3><p>Perspective : HTTPS avec nom de domaine et certificat.</p></article>
+<article class="card sl rv"><h3>Disponibilité</h3><p>Perspective : sauvegardes automatiques et reprise rapide.</p></article>
+</div></div>
+</section>
+
+<section class="sec" id="fiche">
+<div class="w">
+<h2 class="t rv">Fiche <b>du projet</b></h2>
+<div class="cards c2">
+<article class="card sg rv"><h3>Mon rôle</h3><p>Stagiaire : conception, installation, configuration, tests et documentation du système. <span class="todo">À confirmer</span></p></article>
+<article class="card wh rv"><h3>Stack</h3><div class="tg"><span>pfSense CE</span><span>FreeRADIUS</span><span>MariaDB</span><span>Django</span><span>VMware</span><span>Ubuntu Server</span></div></article>
+<article class="card sl rv"><h3>Preuves</h3><p><span class="todo">À ajouter</span> Dépôt GitHub, vidéo de démonstration.</p></article>
+<article class="card sl rv"><h3>Documentation</h3><p>Dossier de présentation et volume 2 de documentation technique. <span class="todo">PDF à ajouter</span></p></article>
+</div></div>
+</section>
+</main>
+
+<footer class="ft"><div class="w"><span>© 2026 KOMARA Ahmed El-Habib</span><a href="index.html#projets">Retour aux projets</a></div></footer>
+</body>
+</html>
