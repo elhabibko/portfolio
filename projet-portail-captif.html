@@ -6,6 +6,7 @@
 <title>Portail captif avec facturation · KOMARA Ahmed El-Habib</title>
 <meta name="description" content="Projet de stage : portail captif avec facturation sur pfSense, FreeRADIUS, MariaDB et Django. Quatre verrous, neuf phases, dix tests de recette.">
 <meta name="theme-color" content="#3a6e76">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%233a6e76'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'%3EK%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 <script src="main.js" defer></script>
@@ -14,8 +15,9 @@
 <a class="skip" href="#main">Aller au contenu</a>
 <header class="top"><div class="w">
 <a class="brand" href="index.html">KOMARA Ahmed El-Habib</a>
-<nav aria-label="Navigation principale"><ul>
-<li><a href="index.html#projets">Projets</a></li><li><a href="index.html#competences">Compétences</a></li><li><a href="index.html#parcours">Parcours</a></li><li><a href="index.html#contact">Contact</a></li>
+<button class="mb" type="button" aria-expanded="false" aria-controls="nv">Menu</button>
+<nav id="nv" aria-label="Navigation principale"><ul>
+<li><a href="index.html#projets">Projets</a></li><li><a href="index.html#parcours">Parcours</a></li><li><a href="index.html#competences">Compétences</a></li><li><a href="index.html#contact">Contact</a></li>
 </ul></nav></div></header>
 
 <main id="main">
@@ -29,8 +31,8 @@
 </div>
 </section>
 
-<section class="sec dark ci" id="contexte">
-<span class="dc a1" aria-hidden="true"></span><span class="dc a2" aria-hidden="true"></span>
+<section class="sec dark mid" id="contexte">
+<div class="dec s4" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i></div>
 <div class="w">
 <h2 class="t rv">Contexte et objectif</h2>
 <div class="cards c2">
@@ -39,11 +41,11 @@
 </div></div>
 </section>
 
-<section class="sec dark sq" id="verrous">
-<span class="dc a1" aria-hidden="true"></span><span class="dc a2" aria-hidden="true"></span>
+<section class="sec dark" id="verrous">
+<div class="dec s8" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i></div>
 <div class="w">
 <h2 class="t rv">Quatre verrous avant tout accès</h2>
-<div class="rm r4">
+<div class="rm">
 <article class="card rv"><span class="lb">VERROU 1</span><h3>Interception</h3><p>Tout trafic http d'un client non authentifié est redirigé vers le portail.</p></article>
 <article class="card rv"><span class="lb">VERROU 2</span><h3>Commande</h3><p>Utilisateur identifié, forfait choisi, montant calculé en FCFA entier.</p></article>
 <article class="card rv"><span class="lb">VERROU 3</span><h3>Validation</h3><p>La demande de paiement simulé est acceptée par l'administrateur.</p></article>
@@ -52,20 +54,21 @@
 </section>
 
 <section class="sec" id="briques">
-<svg class="ar2 lt" viewBox="0 0 504 810" aria-hidden="true"><path d="M0 810V257A252 252 0 0 1 504 257V810Z" fill="currentColor" opacity=".1"/><path d="M0 810V442A252 252 0 0 1 504 442V810Z" fill="currentColor" opacity=".16"/></svg>
+<div class="dec s3" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i><i class="e"></i></div>
 <div class="w">
 <h2 class="t rv">Trois briques, un rôle chacune</h2>
-<div class="cards c3">
+<div class="cards">
 <article class="card sg rv"><h3>pfSense</h3><p>Intercepte. Pare-feu et routeur : il bloque tout utilisateur non authentifié et le redirige vers l'application.</p></article>
 <article class="card tl rv"><h3>Django</h3><p>Vend et facture. Comptes, forfaits, demandes de paiement simulées, validation et factures PDF.</p></article>
 <article class="card wh rv"><h3>FreeRADIUS</h3><p>Ouvre et coupe. Il connaît l'identifiant de chaque achat et sa date d'expiration.</p></article>
 </div></div>
 </section>
 
-<section class="sec fe" id="phases">
+<section class="sec" id="phases">
+<div class="dec s6" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i></div>
 <div class="w">
 <h2 class="t rv">Neuf phases, chacune validée</h2>
-<div class="cards c3">
+<div class="cards sm">
 <article class="card s rv"><span class="n">Phase 0</span><h3>Socle pfSense</h3><p>Critère : ping 8.8.8.8 depuis le client.</p></article>
 <article class="card s rv"><span class="n">Phase 1</span><h3>Portail natif</h3><p>Critère : un code ouvre Internet, puis se coupe.</p></article>
 <article class="card s rv"><span class="n">Phase 2</span><h3>Serveur Ubuntu</h3><p>Critère : ssh et apt update fonctionnent.</p></article>
@@ -78,8 +81,8 @@
 </div></div>
 </section>
 
-<section class="sec dark ci" id="recette">
-<span class="dc a1" aria-hidden="true"></span><span class="dc a2" aria-hidden="true"></span>
+<section class="sec dark" id="recette">
+<div class="dec s11" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i></div>
 <div class="w">
 <h2 class="t rv">Recette : dix scénarios de test</h2>
 <div class="cards c2">
@@ -91,14 +94,15 @@
 </section>
 
 <section class="sec" id="bilan">
+<div class="dec s3" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i></div>
 <div class="w">
 <h2 class="t rv">Difficultés et solutions</h2>
-<div class="cards c3">
+<div class="cards">
 <article class="card sg rv"><h3>Disque pfSense corrompu</h3><p>Désormais : arrêt par Halt, instantanés à chaque jalon, config.xml exporté.</p></article>
 <article class="card tl rv"><h3>LAN absent</h3><p>Seconde carte réseau oubliée : ajoutée, puis interfaces réassignées.</p></article>
 <article class="card wh rv"><h3>Clavier AZERTY/QWERTY</h3><p>Accès au serveur par SSH depuis Windows.</p></article>
 </div>
-<div class="cards c3 pers">
+<div class="cards pers">
 <article class="card sl rv"><h3>Paiement</h3><p>Perspective : API Mobile Money avec confirmation automatique.</p></article>
 <article class="card sl rv"><h3>Chiffrement</h3><p>Perspective : HTTPS avec nom de domaine et certificat.</p></article>
 <article class="card sl rv"><h3>Disponibilité</h3><p>Perspective : sauvegardes automatiques et reprise rapide.</p></article>
