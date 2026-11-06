@@ -2,7 +2,8 @@
 var d=document;d.documentElement.classList.add('js');
 d.addEventListener('DOMContentLoaded',function(){
 var io='IntersectionObserver' in window,els=d.querySelectorAll('.rv');
-if(io){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target);}});},{threshold:.1});els.forEach(function(el){o.observe(el);});}
+function done(el){setTimeout(function(){el.classList.remove('rv','in');},1400);}
+if(io){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');done(e.target);o.unobserve(e.target);}});},{threshold:.1});els.forEach(function(el){o.observe(el);});}
 else{els.forEach(function(el){el.classList.add('in');});}
 var links=d.querySelectorAll('nav a[href^="#"]'),map={};
 links.forEach(function(a){var s=d.querySelector(a.getAttribute('href'));if(s)map[s.id]=a;});
