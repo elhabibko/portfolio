@@ -8,6 +8,7 @@ if(io){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.i
 else{els.forEach(function(el){el.classList.add('in');});}
 var links=d.querySelectorAll('nav a[href^="#"]'),map={};
 links.forEach(function(a){var s=d.querySelector(a.getAttribute('href'));if(s)map[s.id]=a;});
+d.querySelectorAll('[data-tab]').forEach(function(s){var a=d.querySelector('nav a[href="'+s.getAttribute('data-tab')+'"]');if(a)map[s.id]=a;});
 if(io&&links.length){var n=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.removeAttribute('aria-current');});if(map[e.target.id])map[e.target.id].setAttribute('aria-current','true');}});},{rootMargin:'-45% 0px -50% 0px'});
 Object.keys(map).forEach(function(k){n.observe(d.getElementById(k));});}
 var b=d.querySelector('.mb'),nv=d.getElementById('nv');
