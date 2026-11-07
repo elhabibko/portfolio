@@ -1,10 +1,11 @@
 (function(){
-var d=document,root=d.documentElement;root.classList.add('js');
+var d=document,root=d.documentElement;
 var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!calm)root.classList.add('js');
 d.addEventListener('DOMContentLoaded',function(){
 var io='IntersectionObserver' in window,els=d.querySelectorAll('.rv');
-function done(el){setTimeout(function(){el.classList.remove('rv','in');},1500);}
-if(io){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');done(e.target);o.unobserve(e.target);}});},{threshold:.1});els.forEach(function(el){o.observe(el);});}
+function done(el){setTimeout(function(){el.classList.remove('rv','in');},1800);}
+if(io&&!calm){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');done(e.target);o.unobserve(e.target);}});},{threshold:.1});els.forEach(function(el){o.observe(el);});}
 else{els.forEach(function(el){el.classList.add('in');});}
 var links=d.querySelectorAll('nav a[href^="#"]'),map={};
 links.forEach(function(a){var s=d.querySelector(a.getAttribute('href'));if(s)map[s.id]=a;});
@@ -15,7 +16,8 @@ var b=d.querySelector('.mb'),nv=d.getElementById('nv');
 if(b&&nv){b.addEventListener('click',function(){var x=nv.classList.toggle('open');b.setAttribute('aria-expanded',x);});
 nv.addEventListener('click',function(e){if(e.target.closest('a')){nv.classList.remove('open');b.setAttribute('aria-expanded','false');}});}
 d.querySelectorAll('[data-u]').forEach(function(a){a.href='mailto:'+a.getAttribute('data-u')+'@'+a.getAttribute('data-d');});
-if(!calm){d.addEventListener('pointermove',function(e){var c=e.target.closest&&e.target.closest('.card');if(!c)return;var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');},{passive:true});}
+var up=d.querySelector('.up');
+if(up){var tick=false;window.addEventListener('scroll',function(){if(tick)return;tick=true;requestAnimationFrame(function(){up.classList.toggle('on',window.scrollY>700);tick=false;});},{passive:true});}
 d.querySelectorAll('.stats b').forEach(function(el){
 var t=parseInt(el.textContent,10);if(isNaN(t)||calm||!io)return;
 el.textContent='0';
